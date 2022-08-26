@@ -4,11 +4,15 @@ import 'package:foxbit_hiring_test_template/domain/repositories/heartbeat_reposi
 class HeartbeatRepository implements IHeartbeatRepository {
   final String _eventName = 'PING';
 
+  final FoxbitWebSocket ws;
+  HeartbeatRepository(this.ws);
+
   @override
-  Future<Map> send(FoxbitWebSocket ws) {
+  Future<Map> send() {
     ws.send(_eventName, {});
-    
-    return ws.stream.firstWhere((message) => message['n'].toString().toUpperCase() == _eventName && message['i'] == ws.lastId);
+
+    return ws.stream.firstWhere((message) =>
+        message['n'].toString().toUpperCase() == _eventName &&
+        message['i'] == ws.lastId);
   }
-  
 }

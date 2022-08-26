@@ -12,7 +12,7 @@ void main() {
 
   setUp(() {
     webSocket = TestFoxbitWebSocket();
-    useCase = HeartbeatUseCase(HeartbeatRepository());
+    useCase = HeartbeatUseCase(HeartbeatRepository(webSocket));
     observer = DefaultTestObserver();
   });
 
