@@ -4,15 +4,15 @@ import 'package:foxbit_hiring_test_template/domain/repositories/i_price_reposito
 import 'package:foxbit_hiring_test_template/domain/usecases/list_prices_by_multi_id_usecase.dart';
 import 'package:mockito/mockito.dart';
 
-class MockIPriceRepository extends Mock implements IPriceRepository {}
+class _MockIPriceRepository extends Mock implements IPriceRepository {}
 
 void main() {
-  MockIPriceRepository mockIPriceRepository;
+  _MockIPriceRepository mockIPriceRepository;
   ListPricesByMultiIdUsecase stub;
 
   setUp(
     () {
-      mockIPriceRepository = MockIPriceRepository();
+      mockIPriceRepository = _MockIPriceRepository();
       stub = ListPricesByMultiIdUsecase(
         mockIPriceRepository,
       );
