@@ -8,11 +8,10 @@ class ListPricesByMultiIdUsecase extends CompletableUseCase<List<int>> {
   final IPriceRepository _repository;
 
   ListPricesByMultiIdUsecase(this._repository);
+  final controller = StreamController<List<PriceEntity>>();
 
   @override
   Future<Stream<void>> buildUseCaseStream(List<int> params) async {
-    final controller = StreamController<List<PriceEntity>>();
-
     try {
       Iterable<PriceEntity> resFindAll;
 
