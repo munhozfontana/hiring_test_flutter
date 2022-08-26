@@ -30,11 +30,11 @@ class HomePresenter extends Presenter {
 
   void sendPrice() {
     _listAllPriceUsecase.execute(_ListAllPriceObserver(this), [
-      // 1,
-      // 2,
-      // 4,
-      // 6,
-      // 10,
+      1,
+      2,
+      4,
+      6,
+      10,
     ]);
   }
 
